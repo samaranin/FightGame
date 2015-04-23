@@ -1,1 +1,10 @@
 D:\Підручники\FightGame\FightGame\FightGame\bin\Debug\FightGame.exe.config
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.csprojResolveAssemblyReference.cache
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.Form1.resources
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.Properties.Resources.resources
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.csproj.GenerateResource.Cache
+D:\Підручники\FightGame\FightGame\FightGame\bin\Debug\players.mdb
+D:\Підручники\FightGame\FightGame\FightGame\bin\Debug\FightGame.exe
+D:\Підручники\FightGame\FightGame\FightGame\bin\Debug\FightGame.pdb
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.exe
+D:\Підручники\FightGame\FightGame\FightGame\obj\Debug\FightGame.pdb
