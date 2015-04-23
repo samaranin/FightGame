@@ -13,24 +13,32 @@
         private double _fortune;
 
 
-        public Player(string name, int id, int str, int agl, int intel, double end, int cloth, int wpn, double ftn)
+        public Player(DatabasePlayerConstructor constructor)
         {
-            Name = name;
-            ID = id;
-            Strength = str;
-            Intellect = intel;
-            Agility = agl;
-            Endurance = end;
-            Clothes = cloth;
-            Weapon = wpn;
-            _fortune = ftn;
+            Name        =   constructor.GetPlayerName();
+            ID          =   constructor.GetPlayerId();
+            Strength    =   constructor.GetPlayerStrength();
+            Intellect   =   constructor.GetPlayerIntellect();
+            Agility     =   constructor.GetPlayerAgility();
+            Endurance   =   constructor.GetPlayerEndurance();
+            Clothes     =   constructor.GetPlayerClothes();
+            Weapon      =   constructor.GetPlayerWeapon();
+            _fortune    =   constructor.GetPlayerFortune();
         }
 
-        protected Player()
+        public Player()
         {
-            throw new System.NotImplementedException();
+            Name = "";
+            ID = 0;
+            Strength = 0;
+            Intellect = 0;
+            Agility = 0;
+            Endurance = 0;
+            Clothes = 0;
+            Weapon = 0;
+            _fortune = 0;
         }
-
+        
         public string GetPlayerName()
         {
             return Name;
