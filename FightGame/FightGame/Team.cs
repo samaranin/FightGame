@@ -1,6 +1,6 @@
 ﻿namespace FightGame
 {
-    internal class Team : Player
+    internal class Team
     {
         private static readonly Player[] TeamPlayers = new Player[5];
 
@@ -8,12 +8,15 @@
         {
             for (int i = 0; i < 5; i++)
             {
-                TeamPlayers[i] = new Player();
+                TeamPlayers[i] = new Player(teamPlayers[i]);
             }
+        }
 
+        public Team()
+        {
             for (int i = 0; i < 5; i++)
             {
-                TeamPlayers[i] = teamPlayers[i];
+                TeamPlayers[i] = new Player();
             }
         }
 
