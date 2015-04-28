@@ -1,7 +1,9 @@
 ﻿namespace FightGame
 {
+    //this class represent players
     class Player
     {
+        //players characteristics
         private readonly string _name;
         private readonly int _id;
         private readonly int _strength;
@@ -13,6 +15,7 @@
         private double _fortune;
 
 
+        //construct from another player
         public Player(Player player)
         {
             _name = player.GetPlayerName();
@@ -26,6 +29,7 @@
             _fortune = player.GetPlayerFortune();
         }
 
+        //construct from database
         public Player(DatabasePlayerConstructor constructor)
         {
             _name        =   constructor.GetPlayerName();
@@ -39,6 +43,7 @@
             _fortune    =   constructor.GetPlayerFortune();
         }
 
+        //default empty constructor
         public Player()
         {
             _name = "";
@@ -52,6 +57,7 @@
             _fortune = 0;
         }
         
+        //returns players stats
         public string GetPlayerName()
         {
             return _name;
@@ -97,19 +103,16 @@
             return _fortune;
         }
 
+        //count general characteristic
         public double GetPlayerMight()
         {
             return ( ( (_strength + _agility + _intellect)*_endurance ) + _clothes + _weapon )*_fortune;
         }
 
+        //update fortune if team with this player wins
         public void PlayerIsWinner()
         {
             _fortune += 0.1;
-        }
-
-        public void PlayerIsLoser()
-        {
-            _fortune -= 0.1;
         }
     }
 }

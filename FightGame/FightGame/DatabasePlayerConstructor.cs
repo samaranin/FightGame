@@ -2,9 +2,13 @@
 
 namespace FightGame
 {
+    //this class copy player's info from database to program
     class DatabasePlayerConstructor: Player
     {
+        //connection parameter
         readonly OleDbConnection _connection;
+
+        //players stats
         private string _name;
         private readonly int _id;
         private int _strength;
@@ -15,8 +19,10 @@ namespace FightGame
         private int _weapon;
         private double _fortune;
 
+        //constructor
         public DatabasePlayerConstructor(int id)
         {
+            //create new connection
             _connection = new OleDbConnection
             {
                 ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=players.mdb"
@@ -24,22 +30,29 @@ namespace FightGame
             _connection.Open();
 
             _id = id;
-            GetPlayerInformation(id);
-            _connection.Close();
 
+            //gets info from database
+            GetPlayerInformation(id);
+
+            _connection.Close();
         }
+
+        //gets info from database
         private void GetPlayerInformation(int id)
         {
+            //sql command
             var command = new OleDbCommand
             {
                 CommandText = "SELECT * FROM PlayersInfo WHERE ID = " + id + ";",
                 Connection  = _connection
             };
 
+            //data reader
             OleDbDataReader dataReader = command.ExecuteReader();
 
             if (dataReader != null && dataReader.HasRows)
             {
+                //copy data to vars
                 while (dataReader.Read())
                 {
                     _name       = (string) dataReader["PlayerName"];
@@ -55,6 +68,7 @@ namespace FightGame
             }
         }
 
+        //gets parameters from constructor
         public new string GetPlayerName()
         {
             return _name;
