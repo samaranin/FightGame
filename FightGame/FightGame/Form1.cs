@@ -159,7 +159,10 @@ namespace FightGame
             return marker ? "Team 1 wins!!!" : "Team 2 wins!!!";
         }
 
+<<<<<<< HEAD
         //change fortune to winner (look Player.cs and FortuneChanger.cs)
+=======
+>>>>>>> b789f308a943844a24df9d19ea24370a8daed87e
         private void TeamIsWinner(bool marker)
         {
             if (marker)
@@ -180,7 +183,10 @@ namespace FightGame
             }
         }
 
+<<<<<<< HEAD
         //fill groupboxes
+=======
+>>>>>>> b789f308a943844a24df9d19ea24370a8daed87e
         private void button1_Click(object sender, EventArgs e)
         {
             ClearWindow();
@@ -234,6 +240,7 @@ namespace FightGame
                     textBox5.Text = Winner(marker);
                     break;
             }
+            TeamIsWinner(marker);
 
             //change fortune (look up)
             TeamIsWinner(marker);
@@ -242,7 +249,10 @@ namespace FightGame
             label1.Text = @"Last winner: " + Winner(marker);
 
             if (_round != 5) return;
+<<<<<<< HEAD
             //if was 5 rounds reset fortune stats
+=======
+>>>>>>> b789f308a943844a24df9d19ea24370a8daed87e
             FortuneChanger.ResetFortune();
             _round = 0;
             //clear textboxes
