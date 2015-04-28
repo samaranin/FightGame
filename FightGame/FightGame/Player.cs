@@ -106,10 +106,5 @@
         {
             _fortune += 0.1;
         }
-
-        public void PlayerIsLoser()
-        {
-            _fortune -= 0.1;
-        }
     }
 }

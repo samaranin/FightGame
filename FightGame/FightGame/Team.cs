@@ -38,11 +38,6 @@
                 for (int i = 0; i < 5; i++)
                     TeamPlayers[i].PlayerIsWinner();
             }
-            else
-            {
-                for (int i = 0; i < 5; i++)
-                    TeamPlayers[i].PlayerIsLoser();
-            }
         }
     }
 }

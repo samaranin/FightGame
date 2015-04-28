@@ -145,6 +145,26 @@ namespace FightGame
             return marker ? "Team 1 wins!!!" : "Team 2 wins!!!";
         }
 
+        private void TeamIsWinner(bool marker)
+        {
+            if (marker)
+            {
+                for (var i = 0; i < 5; i++)
+                {
+                    _team1Players[i].PlayerIsWinner();
+                    FortuneChanger.ChangeFortune(_team1Players[i]);
+                }
+            }
+            else
+            {
+                for (var i = 0; i < 5; i++)
+                {
+                    _team2Players[i].PlayerIsWinner();
+                    FortuneChanger.ChangeFortune(_team2Players[i]);
+                }
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             ClearWindow();
@@ -190,9 +210,11 @@ namespace FightGame
                     textBox5.Text = Winner(marker);
                     break;
             }
+            TeamIsWinner(marker);
 
             label1.Text = @"Last winner: " + Winner(marker);
             if (_round != 5) return;
+            FortuneChanger.ResetFortune();
             _round = 0;
             textBox1.Text = textBox2.Text = textBox3.Text = textBox4.Text = textBox5.Text = "";
         }
